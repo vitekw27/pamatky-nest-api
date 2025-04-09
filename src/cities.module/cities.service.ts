@@ -33,14 +33,14 @@ export class CitiesService {
   }
   public async getAll(): Promise<City[]> {
     return await this.cityRepository.find({
-      relations: ['places','places.Type'],  
+      relations: ['places','places.type'],  
     });
   }
   
   public async GetCity(id:number):Promise<City>{
     return await this.cityRepository.findOne({
       where: { id: 1 },
-      relations: ['places','places.Type'],
+      relations: ['places','places.type'],
     });
   }
   
